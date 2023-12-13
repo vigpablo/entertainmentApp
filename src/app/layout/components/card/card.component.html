@@ -1,0 +1,35 @@
+  <!-- card -->
+  <div class="relative">
+    <!-- play button -->
+    <div class="w-full h-full bg-black opacity-0 rounded-xl hover:opacity-80 absolute duration-500 flex items-center justify-center">
+      <button class="flex items-center justify-center w-28 h-12 bg-white bg-opacity-20 text-white text-lg rounded-full absolute">
+        <img src="../../../../assets/icon-play.svg" class="w-8" alt="">
+        <p class="mx-4">Play</p>
+      </button>
+    </div>
+    <!-- image -->
+    <div>
+      <img [src]="'../../../../assets/thumbnails/' + content.id + '/regular/large.jpg'" alt="" class="rounded-xl">
+    </div>
+     <!-- bookmark -->
+     <div class="flex items-center justify-center w-8 h-8 bg-black rounded-full bg-opacity-50 absolute top-4 right-5 hover:scale-110
+     group duration-150" (click)="bookmarkIcon(content)">
+     <img *ngIf="!content.bookmarked" src="../../../../assets/icon-bookmark-empty.svg" alt="" class="" >
+     <img *ngIf="content.bookmarked" src="../../../../assets/icon-bookmark-full.svg" alt="" class="" >
+   </div>
+</div>
+
+<!-- text -->
+<div class="mt-2">
+  <div class="flex items-center text-bodysm text-gray-200 font-thin">
+    <p>{{content.year}}&nbsp; &#8226; &nbsp;</p>
+    <img [src]="'../../../../assets/icon-category-' + content.icon + '.svg'" alt="" class="w-3.5">
+    <p>&nbsp; {{content.type}} &nbsp;</p>
+    <p> &#8226; &nbsp;{{content.audience}}</p>
+  </div>
+  <h2 class="text-h3 text-white">{{content.title}}</h2>
+</div>
+
+
+
+

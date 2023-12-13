@@ -1,0 +1,44 @@
+<!-- Search -->
+<div class="flex items-center pl-5 pb-2 space-x-3">
+  <img src="../../../../assets/icon-search.svg" alt="" class="pb-2">
+  <div class="flex flex-col w-full">
+    <input type="text" placeholder={{placeholderMessage}} class="w-full focus:outline-none
+      bg-transparent text-h2 text-white font-thin caret-redapp peer" (keyup.enter)="searchMovies(txtInput.value); txtInput.value=''" #txtInput (keyup.enter)="changePlaceholder()" >
+    <div class="w-full pb-1 border-b border-bluelight invisible peer-focus:visible"></div>
+  </div>
+</div>
+
+<!-- <ng-template #notice>
+  <div class="flex items-center pl-5 pb-2 space-x-3">
+    <img src="../../../../assets/icon-search.svg" alt="" class="pb-2">
+    <div class="flex flex-col w-full">
+      <input type="text" placeholder={{notFoundMessage}} class="w-full focus:outline-none
+      bg-transparent text-h2 text-white font-thin caret-redapp peer" (keyup.enter)="searchMovies(txtInput.value); txtInput.value=''" #txtInput (click)="clearMessage()">
+      <div class="w-full pb-1 border-b border-bluelight invisible peer-focus:visible"></div>
+    </div>
+  </div>
+</ng-template> -->
+
+
+<div *ngIf="result.length < 1; else searchResult">
+
+<h1 class="text-h1 text-white font-thin p-6">Movies</h1>
+
+<div class="grid grid-cols-2 gap-4 px-6 text-white justify-items-start md:gap-8 md:grid-cols-3 xl:grid-cols-4">
+  <div *ngFor="let content of allContent" class="cursor-pointer">
+    <!-- cards -->
+    <app-card [content]="content"></app-card>
+  </div>
+</div>
+
+</div>
+
+<ng-template #searchResult>
+  <h1 class="text-h1 text-white font-thin p-6">Movies</h1>
+  <div class="grid grid-cols-2 gap-4 px-6 text-white justify-items-start md:gap-8 md:grid-cols-3 xl:grid-cols-4">
+    <div *ngFor="let content of result">
+      <!-- cards -->
+      <app-card [content]="content"></app-card>
+    </div>
+  </div>
+</ng-template>

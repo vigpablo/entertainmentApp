@@ -1,0 +1,179 @@
+
+
+<!-- search bar -->
+<app-search-bar></app-search-bar>
+
+<div *ngIf="result.length < 1; else searchResult">
+
+<!-- Trending -->
+
+  <h1 class="text-h1 text-white font-thin p-6">Trending</h1>
+
+
+  <div class="wrapper">
+    <owl-carousel-o [options]="customOptions" class="carousel">
+      <ng-template carouselSlide >
+        <!-- play button -->
+        <div [ngClass]="{'cursor-grabbing': grabbing}" (mousedown)="grabbingFunc()" (mouseup)="grabbingFunc()">
+          <div class="play-button-container " >
+            <button class="play-button">
+              <img src="../../../../assets/icon-play.svg" alt="" class="">
+            </button>
+          </div>
+          <!-- Text -->
+          <div class="absolute top-3/4 pl-7 -translate-y-4">
+            <div class="flex items-center text-xs md:text-base text-gray-200 font-light">
+              <p>2019&nbsp; &#8226; &nbsp;</p>
+              <img src="../../../../assets/icon-category-movie.svg" alt="" style="width:15px; border-radius: 0%; pointer-events: none;">
+              <p>&nbsp; Movie</p>
+              <p>&nbsp; &#8226; &nbsp;PG</p>
+            </div>
+            <h2 class="text-h3 xl:text-h2 text-white">Beyond Earth</h2>
+          </div>
+        </div>
+        <!-- image -->
+        <img src="../../../../assets/thumbnails/beyond-earth/trending/large.jpg" alt="">
+        <!-- bookmark -->
+        <div class="bookmarks" (click)="boookmarkIconTrending('beyond-earth')" (click)="beyondEarth()">
+          <img *ngIf="!BeyondEarth" src="../../../../assets/icon-bookmark-empty.svg" alt="" style="width: max-content; border-radius: 0%;" >
+          <img *ngIf="BeyondEarth" src="../../../../assets/icon-bookmark-full.svg" alt="" style="width: max-content; border-radius: 0%;" >
+        </div>
+      </ng-template>
+
+      <ng-template carouselSlide >
+        <!-- play button -->
+        <div [ngClass]="{'cursor-grabbing': grabbing}" (mousedown)="grabbingFunc()" (mouseup)="grabbingFunc()">
+          <div class="play-button-container">
+            <button class="play-button">
+              <img src="../../../../assets/icon-play.svg" alt="">
+            </button>
+          </div>
+          <!-- Text -->
+          <div class="absolute top-3/4 pl-7 -translate-y-4">
+            <div class="flex items-center text-xs md:text-base text-gray-200 font-light">
+              <p>2021&nbsp; &#8226; &nbsp;</p>
+              <img src="../../../../assets/icon-category-movie.svg" alt="" style="width:15px; border-radius: 0%; pointer-events: none;">
+              <p>&nbsp; Movie</p>
+              <p>&nbsp; &#8226; &nbsp;PG</p>
+            </div>
+            <h2 class="text-h3 xl:text-h2 text-white">Bottom Gear</h2>
+          </div>
+        </div>
+        <!-- image -->
+        <img src="../../../../assets/thumbnails/bottom-gear/trending/large.jpg" alt="">
+        <!-- bookmark -->
+        <div class="bookmarks" (click)="boookmarkIconTrending('bottom-gear')" (click)="bottomGear()">
+          <img *ngIf="!BottomGear" src="../../../../assets/icon-bookmark-empty.svg" alt="" style="width: max-content; border-radius: 0%;" >
+          <img *ngIf="BottomGear" src="../../../../assets/icon-bookmark-full.svg" alt="" style="width: max-content; border-radius: 0%;" >
+        </div>
+      </ng-template>
+
+      <ng-template carouselSlide >
+        <!-- play button -->
+        <div [ngClass]="{'cursor-grabbing': grabbing}" (mousedown)="grabbingFunc()" (mouseup)="grabbingFunc()">
+          <div class="play-button-container">
+            <button class="play-button">
+              <img src="../../../../assets/icon-play.svg" alt="">
+            </button>
+          </div>
+          <!-- Text -->
+          <div class="absolute top-3/4 pl-7 -translate-y-4">
+            <div class="flex items-center text-xs md:text-base text-gray-200 font-light">
+              <p>2019&nbsp; &#8226; &nbsp;</p>
+              <img src="../../../../assets/icon-category-tv.svg" alt="" style="width:15px; border-radius: 0%; pointer-events: none;">
+              <p>&nbsp; TV Series</p>
+              <p>&nbsp; &#8226; &nbsp;E</p>
+            </div>
+            <h2 class="text-h3 xl:text-h2 text-white">Undiscovered Cities</h2>
+          </div>
+        </div>
+        <!-- image -->
+        <img src="../../../../assets/thumbnails/undiscovered-cities/trending/large.jpg" alt="">
+        <!-- bookmark -->
+        <div class="bookmarks" (click)="boookmarkIconTrending('undiscovered-cities')" (click)="undiscoveredCities()">
+          <img *ngIf="!UndiscoveredCities" src="../../../../assets/icon-bookmark-empty.svg" alt="" style="width: max-content; border-radius: 0%;" >
+          <img *ngIf="UndiscoveredCities" src="../../../../assets/icon-bookmark-full.svg" alt="" style="width: max-content; border-radius: 0%;" >
+        </div>
+      </ng-template>
+
+      <ng-template carouselSlide >
+        <!-- play button -->
+        <div [ngClass]="{'cursor-grabbing': grabbing}" (mousedown)="grabbingFunc()" (mouseup)="grabbingFunc()">
+          <div class="play-button-container">
+            <button class="play-button">
+              <img src="../../../../assets/icon-play.svg" alt="">
+            </button>
+          </div>
+          <!-- Text -->
+          <div class="absolute top-3/4 pl-7 -translate-y-4">
+            <div class="flex items-center text-xs md:text-base text-gray-200 font-light">
+              <p>2021&nbsp; &#8226; &nbsp;</p>
+              <img src="../../../../assets/icon-category-movie.svg" alt="" style="width:15px; border-radius: 0%; pointer-events: none;">
+              <p>&nbsp; Movie</p>
+              <p>&nbsp; &#8226; &nbsp;18+</p>
+            </div>
+            <h2 class="text-h3 xl:text-h2 text-white">1998</h2>
+          </div>
+        </div>
+        <!-- image -->
+        <img src="../../../../assets/thumbnails/1998/trending/large.jpg" alt="">
+        <!-- bookmark -->
+        <div class="bookmarks" (click)="boookmarkIconTrending('1998')" (click)="ninetyeight()">
+          <img *ngIf="!Ninetyeight" src="../../../../assets/icon-bookmark-empty.svg" alt="" style="width: max-content; border-radius: 0%;" >
+          <img *ngIf="Ninetyeight" src="../../../../assets/icon-bookmark-full.svg" alt="" style="width: max-content; border-radius: 0%;" >
+        </div>
+      </ng-template>
+
+      <ng-template carouselSlide >
+        <!-- play button -->
+        <div [ngClass]="{'cursor-grabbing': grabbing}" (mousedown)="grabbingFunc()" (mouseup)="grabbingFunc()">
+          <div class="play-button-container">
+            <button class="play-button">
+              <img src="../../../../assets/icon-play.svg" alt="">
+            </button>
+          </div>
+          <!-- Text -->
+          <div class="absolute top-3/4 pl-7 -translate-y-4">
+            <div class="flex items-center text-xs md:text-base text-gray-200 font-light">
+              <p>2019&nbsp; &#8226; &nbsp;</p>
+              <img src="../../../../assets/icon-category-movie.svg" alt="" style="width:15px; border-radius: 0%; pointer-events: none;">
+              <p>&nbsp; Movie</p>
+              <p>&nbsp; &#8226; &nbsp;PG</p>
+            </div>
+            <h2 class="text-h3 xl:text-h2 text-white">Dark Side Of The Moon</h2>
+          </div>
+        </div>
+        <!-- image -->
+        <img src="../../../../assets/thumbnails/dark-side-of-the-moon/trending/large.jpg" alt="">
+        <!-- bookmark -->
+        <div class="bookmarks" (click)="boookmarkIconTrending('dark-side-of-the-moon')" (click)="darkSideOfTheMoon()">
+          <img *ngIf="!DarkSideOfTheMoon" src="../../../../assets/icon-bookmark-empty.svg" alt="" style="width: max-content; border-radius: 0%;" >
+          <img *ngIf="DarkSideOfTheMoon" src="../../../../assets/icon-bookmark-full.svg" alt="" style="width: max-content; border-radius: 0%;" >
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+
+  <!-- Recomended -->
+  <h1 class="text-h1 text-white font-thin px-6 pb-6 pt-10">Recommended for you</h1>
+  <!-- cards container -->
+  <div class="grid grid-cols-2 gap-4 px-6 text-white justify-items-start md:gap-8 md:grid-cols-3 xl:grid-cols-4">
+    <div *ngFor="let content of allContent" class="cursor-pointer">
+      <!-- cards -->
+      <app-card [content]="content"></app-card>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #searchResult>
+  <div class="grid grid-cols-2 gap-4 px-6 pt-14 text-white justify-items-start md:gap-8 md:grid-cols-3 xl:grid-cols-4">
+    <div *ngFor="let content of result">
+      <!-- cards -->
+      <app-card [content]="content"></app-card>
+    </div>
+  </div>
+</ng-template>
+
+
+

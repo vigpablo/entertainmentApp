@@ -1,0 +1,31 @@
+<div class="bg-bluedark w-full min-h-screen flex flex-col xl:flex-row">
+  <div class="fixed z-10 flex items-center justify-between bg-bluesemi rounded-b-2xl py-6 px-6 w-full xl:w-auto xl:flex-col xl:justify-normal
+    xl:ml-6 xl:py-8 xl:my-8 xl:h-[960px] xl:rounded-2xl xl:space-y-12 xl:space-x-0 ">
+    <img src="../../../../assets/logo.svg" alt="" class="xl:pb-5" routerLink="/home" (click)="homeOn(); movieOff(); tvOff(); bookmarkedOff()">
+    <div class="flex space-x-10 xl:flex-col xl:space-y-10 xl:space-x-0">
+      <div routerLink="/home" (click)="homeOn(); movieOff(); tvOff(); bookmarkedOff()">
+        <img *ngIf="homeActive" src="../../../../assets/icon-nav-active-home.svg" alt="" >
+        <img *ngIf="!homeActive" src="../../../../assets/icon-nav-home.svg" alt="">
+      </div>
+      <div routerLink="/movies" (click)="movieOn(); homeOff(); tvOff(); bookmarkedOff()">
+        <img *ngIf="movieActive" src="../../../../assets/icon-nav-active-movies.svg" alt="" >
+        <img *ngIf="!movieActive" src="../../../../assets/icon-nav-movies.svg" alt="">
+      </div>
+      <div routerLink="/tv" (click)="tvOn(); homeOff(); movieOff(); bookmarkedOff()">
+        <img *ngIf="tvActive" src="../../../../assets/icon-nav-active-tv-series.svg" alt="" >
+        <img *ngIf="!tvActive" src="../../../../assets/icon-nav-tv-series.svg" alt="">
+      </div>
+      <div routerLink="bookmarked" (click)="bookmarkedOn(); homeOff(); movieOff(); tvOff()" class="flex justify-center">
+        <img *ngIf="bookmarkedActive" src="../../../../assets/icon-bookmark-full.svg" alt="" class="w-4" >
+        <img *ngIf="!bookmarkedActive" src="../../../../assets/icon-nav-bookmark.svg" alt="" >
+      </div>
+    </div>
+    <div class="hidden spacer xl:block"></div>
+    <img src="../../../../assets/image-avatar.png" alt="" class="w-10 border-[1px] border-white rounded-full">
+  </div>
+  <div class="py-6 my-6 w-auto xl:w-[90%] xl:ml-36">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
